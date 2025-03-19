@@ -9,10 +9,11 @@ public class AutenticacaoService : Service, IAutenticacaoService
     private readonly HttpClient _httpClient;
     
     public AutenticacaoService(HttpClient httpClient, 
-        IOptions<AppSettings> settings)
+        IOptions<AppSettings> settings, IConfiguration configuration)
     {
+        var autenticacionUrl = configuration["AutenticacaoUrl"];
         httpClient.BaseAddress = new Uri(settings.Value.AutenticacaoUrl);
-
+        
         _httpClient = httpClient;
     }
     
@@ -20,7 +21,7 @@ public class AutenticacaoService : Service, IAutenticacaoService
     {
         var loginContent = ObterConteudo(usuarioLogin);
 
-        var response = await _httpClient.PostAsync("api/identidade/autenticar", loginContent);
+        var response = await _httpClient.PostAsync("/api/identidade/autenticar", loginContent);
 
         if (!TratarErrosResponse(response))
         {

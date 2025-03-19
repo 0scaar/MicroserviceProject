@@ -33,4 +33,8 @@
       <Compile Remove="WeatherForecast.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj" />
+    </ItemGroup>
+
 </Project>

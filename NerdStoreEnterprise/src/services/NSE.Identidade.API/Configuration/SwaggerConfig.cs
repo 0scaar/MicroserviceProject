@@ -13,7 +13,7 @@ public static class SwaggerConfig
                 Title = "NerdStore Enterprise Identity API",
                 Description = "Esta API faz parte de um projeto ASP.NET Core Enterprise Applications.",
                 Contact = new OpenApiContact() { Name = "Oscar", Email = "lcama.oscar@gmail.com" },
-                License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://github.com/0scaar") }
+                License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
             });
 
         });
