@@ -35,6 +35,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj" />
+      <ProjectReference Include="..\..\host\NSE.AspireApp\NSE.AspireApp.ServiceDefaults\NSE.AspireApp.ServiceDefaults.csproj" />
     </ItemGroup>
 
 </Project>

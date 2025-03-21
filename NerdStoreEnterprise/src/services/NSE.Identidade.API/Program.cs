@@ -1,8 +1,9 @@
 using NSE.Identidade.API.Configuration;
+using NSE.AspireApp.ServiceDefaults;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.AddServiceDefaults();
 
 // Agregar configuración para diferentes ambientes
 builder.Configuration
@@ -29,5 +30,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseApiConfiguration();
+
+app.MapDefaultEndpoints();
 
 app.Run();

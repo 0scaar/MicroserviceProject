@@ -1,5 +1,4 @@
 using System.Net;
-using Polly.CircuitBreaker;
 using Refit;
 
 namespace NSE.WebApp.MVC.Extensions;
@@ -31,7 +30,7 @@ public class ExceptionMiddleware
         {
             HandleRequestExceptionAsync(httpContext, ex.StatusCode);
         }
-        catch (BrokenCircuitException)
+        catch (Polly.CircuitBreaker.BrokenCircuitException)
         {
             HandleCircuitBreakerExceptionAsync(httpContext);
         }

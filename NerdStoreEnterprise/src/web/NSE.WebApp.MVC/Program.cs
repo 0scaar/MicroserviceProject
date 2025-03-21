@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NSE.AspireApp.ServiceDefaults;
 using NSE.WebApp.MVC.Configuration;
 using NSE.WebApp.MVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
 
 // Agregar configuración para diferentes ambientes
 builder.Configuration
@@ -35,5 +38,6 @@ var app = builder.Build();
 
 app.UseMvcConfiguration();
 
+app.MapDefaultEndpoints();
 
 app.Run();
